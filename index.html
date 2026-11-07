@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="scorebook-mode" content="single">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f6f5f0">
+  <meta name="description" content="记录每一份小进步，一个温暖、简单的家庭积分本。">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="小小积分本">
+  <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cmVjdCB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgcng9IjExNiIgZmlsbD0iIzQyNjk0ZiIvPjxwYXRoIGQ9Ik0yNTYgMTA1YzE2IDk5IDUyIDEzNSAxNTEgMTUxLTk5IDE2LTEzNSA1Mi0xNTEgMTUxLTE2LTk5LTUyLTEzNS0xNTEtMTUxIDk5LTE2IDEzNS01MiAxNTEtMTUxWiIgZmlsbD0iI2Y0ZGNhOCIvPjxjaXJjbGUgY3g9IjM4MyIgY3k9IjEyOCIgcj0iMTUiIGZpbGw9IiNkM2RmYzgiLz48L3N2Zz4K" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="data:image/png;base64,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">
+  <style>
+:root{--bg:#f6f5f0;--paper:#fff;--ink:#29382f;--muted:#7d857f;--green:#42694f;--green-light:#edf3ed;--orange:#dd7855;--line:#e9eae3;--radius:22px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;color:var(--ink);background:var(--bg);font-synthesis:none}
+*{box-sizing:border-box}body{margin:0}button,input,select,textarea{font:inherit}button,a{-webkit-tap-highlight-color:transparent}button{cursor:pointer}button:disabled{cursor:not-allowed;opacity:.48}a{color:inherit;text-decoration:none}button:focus-visible,a:focus-visible{outline:3px solid #c49043;outline-offset:4px}button{border:0}svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}.app-shell{max-width:1120px;margin:auto;padding:0 36px 112px}.topbar{height:110px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #e4e7df}.brand{display:flex;gap:13px;align-items:center;font-size:21px;font-weight:750;letter-spacing:1px}.brand-mark{display:grid;place-items:center;width:43px;height:43px;border-radius:15px;background:var(--green);color:#f9df9b;font-size:32px}.brand small{display:block;font-size:8px;letter-spacing:1.6px;color:var(--muted);margin-top:6px;font-weight:500}.header-actions{display:flex;gap:23px;align-items:center}.local-status{font-size:12px;color:var(--muted)}.local-status i{display:inline-block;width:6px;height:6px;background:#7d9a7c;border-radius:50%;margin-right:5px}.icon-button{width:40px;height:40px;border-radius:50%;background:transparent;color:var(--ink);display:grid;place-items:center}.icon-button:hover{background:#e9ede5}main{outline:none;min-height:65vh}.page-heading{display:flex;justify-content:space-between;align-items:center;gap:16px;margin:34px 0 24px}.eyebrow{font-size:10px;letter-spacing:2px;color:var(--green);font-weight:700;margin:0 0 9px}.page-heading h1{font-size:28px;letter-spacing:.5px;margin:0 0 9px;font-weight:700}.page-heading p{margin:0;color:var(--muted);font-size:13px;line-height:1.7}.date-chip{font-size:12px;color:var(--muted);display:flex;align-items:center;gap:8px}.date-chip svg{width:17px}.dashboard-grid{display:grid;grid-template-columns:1.45fr 1fr;gap:22px}.score-card{position:relative;overflow:hidden;background:var(--green);border-radius:var(--radius);color:white;padding:29px 32px;min-height:257px}.score-label{font-size:13px;letter-spacing:1px;color:#dce5d9;display:flex;align-items:center;gap:7px}.score-label svg{width:18px}.score-value{font-size:78px;letter-spacing:-3px;font-weight:650;line-height:1.2;margin:12px 0 5px;font-variant-numeric:tabular-nums;position:relative;z-index:1}.score-value small{font-size:13px;letter-spacing:0;font-weight:400;margin-left:9px;color:#d6e2d3}.score-description{font-size:12px;color:#d5e1d2;margin:0}.score-decoration{position:absolute;font-size:210px;color:#c7dbbd;opacity:.13;right:0;top:9px;transform:rotate(15deg);line-height:1}.score-actions{display:flex;gap:10px;margin-top:23px;position:relative}.button{display:inline-flex;align-items:center;justify-content:center;gap:7px;min-height:43px;padding:10px 19px;border-radius:11px;font-size:13px;font-weight:600;transition:background .15s,transform .15s}.button:active{transform:translateY(1px)}.button svg{width:18px;height:18px}.button.primary{background:var(--green);color:white}.button.primary:hover{background:#345a40}.button.warm{background:#f4dca8;color:#414f36}.button.ghost-light{background:#ffffff16;color:white;border:1px solid #ffffff32}.button.secondary{background:#edf1e9;color:var(--green)}.button.danger{background:#f9eeea;color:#b35e45}.button.plain{background:transparent;color:var(--muted)}.button.full{width:100%}.stats-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.stat{background:var(--paper);border:1px solid #eeeee7;border-radius:18px;padding:20px}.stat:first-child{grid-column:span 2;display:flex;align-items:center;justify-content:space-between}.stat-label{font-size:12px;color:var(--muted);display:flex;align-items:center;gap:7px}.stat-label svg{width:16px;height:16px}.stat-number{font-size:28px;font-weight:650;margin:12px 0 0;letter-spacing:-.5px;font-variant-numeric:tabular-nums}.stat:first-child .stat-number{font-size:34px;margin:0;color:var(--green)}.stat-number small{font-size:11px;color:var(--muted);font-weight:400;margin-left:5px}.section{margin-top:28px}.section-heading{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:15px}.section-heading h2{font-size:16px;margin:0;display:flex;align-items:center;gap:9px;font-weight:650}.section-heading h2 svg{width:19px;color:var(--green)}.text-button{padding:6px 0;background:none;color:var(--muted);font-size:12px;display:inline-flex;align-items:center;gap:4px}.text-button:hover{color:var(--green)}.text-button svg{width:14px;height:14px}.rule-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.rule-card{background:white;border:1px solid var(--line);border-radius:15px;padding:16px 17px;text-align:left;display:flex;gap:11px;align-items:center;color:var(--ink);transition:border-color .15s,transform .15s;min-width:0}.rule-card:hover{border-color:#9db199;transform:translateY(-2px)}.rule-symbol{width:35px;height:35px;border-radius:11px;background:#f2f2e9;color:#89945b;display:grid;place-items:center;flex-shrink:0}.rule-card:nth-child(2n) .rule-symbol{background:#faeee7;color:#c48a66}.rule-card strong{display:block;font-size:12px;font-weight:550;line-height:1.5;overflow-wrap:anywhere}.rule-card small{display:block;margin-top:4px;font-size:11px;color:var(--green);font-weight:650}.lower-grid{display:grid;grid-template-columns:1.45fr 1fr;gap:22px}.panel{background:white;border:1px solid var(--line);border-radius:18px;overflow:hidden}.empty-state{padding:38px 20px;text-align:center;color:var(--muted);font-size:12px;line-height:1.9}.empty-icon{display:grid;place-items:center;margin:0 auto 12px;width:45px;height:45px;border-radius:50%;color:#97a58a;background:#f1f4ed}.empty-icon svg{width:23px}.empty-state strong{display:block;color:#59695a;font-weight:500;font-size:14px;margin-bottom:4px}.empty-state .button{margin-top:13px}.goal-card{padding:21px;background:#efeee4;border-color:#e9e7da}.goal-top{display:flex;align-items:center;gap:11px;margin-bottom:14px}.reward-symbol{display:grid;place-items:center;width:44px;height:44px;background:#fffdf7;color:#a88d5d;border-radius:14px;flex-shrink:0}.reward-symbol svg{width:24px;height:24px}.goal-top h3{font-size:14px;margin:0 0 5px;font-weight:600;overflow-wrap:anywhere}.goal-top p{font-size:11px;color:var(--muted);margin:0}.progress-meta{display:flex;justify-content:space-between;font-size:11px;color:#7f8373;margin:16px 0 9px}.progress-meta strong{font-weight:600;color:var(--green)}.progress{height:6px;border-radius:6px;background:#dedfcf;overflow:hidden}.progress span{display:block;background:#8b9e77;height:100%;border-radius:6px}.goal-note{font-size:11px;color:#878879;line-height:1.8;margin:13px 0 0}.record-row{display:flex;align-items:center;gap:12px;padding:16px 20px;border-bottom:1px solid #f0f0eb;width:100%;text-align:left;background:white;color:var(--ink)}.record-row:last-child{border-bottom:0}.record-row:hover{background:#fbfcf8}.record-symbol{width:35px;height:35px;display:grid;place-items:center;border-radius:11px;background:#eff4ec;color:#729066;flex-shrink:0}.record-symbol.deduct{background:#fbefea;color:#cb896d}.record-symbol.redeem{background:#f7f1e5;color:#b59a61}.record-symbol.reversal{background:#eff0ef;color:#8e9790}.record-symbol svg{width:17px}.record-body{flex:1;min-width:0}.record-title{font-size:13px;font-weight:550;display:block;overflow-wrap:anywhere;line-height:1.5}.record-meta{font-size:10px;color:#92998f;display:block;margin-top:5px;line-height:1.6}.record-points{font-size:18px;font-weight:650;color:var(--green);font-variant-numeric:tabular-nums;white-space:nowrap}.record-points.negative{color:#ce8366}.record-points.muted{color:#a4aaa2}.record-row.is-reversed .record-title{text-decoration:line-through;color:var(--muted)}.record-row.is-reversed .record-points{color:#a4aaa2}.page-footer{text-align:center;font-size:10px;letter-spacing:1px;color:#a4aa9d;margin:35px 0 0}.page-footer span{color:#b4b995;margin-left:5px}.bottom-nav{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);display:flex;gap:6px;padding:7px;background:#fffefaed;border:1px solid #e5e7dc;border-radius:18px;box-shadow:0 6px 30px #29382f0c;z-index:20;backdrop-filter:blur(14px)}.nav-item{background:none;display:flex;align-items:center;justify-content:center;gap:9px;font-size:12px;color:#899080;border-radius:12px;min-width:112px;height:43px}.nav-item svg{width:19px;height:19px}.nav-item.active{color:var(--green);background:#edf2e7;font-weight:650}.rewards-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.reward-card{border:1px solid var(--line);background:#fff;border-radius:20px;padding:24px;display:flex;flex-direction:column;min-width:0}.reward-card .reward-symbol{width:56px;height:56px;background:#f4f1e7;margin-bottom:22px}.reward-card:nth-child(3n+2) .reward-symbol{background:#edf2eb;color:#7c9678}.reward-card:nth-child(3n+3) .reward-symbol{background:#f8ede7;color:#bf8d74}.reward-card h2{font-size:16px;margin:0 0 8px;overflow-wrap:anywhere}.reward-card p{font-size:12px;color:var(--muted);line-height:1.8;margin:0 0 20px;min-height:42px;overflow-wrap:anywhere}.reward-cost{font-size:26px;font-weight:650;letter-spacing:-1px;margin:auto 0 18px}.reward-cost small{font-size:11px;color:var(--muted);font-weight:400;letter-spacing:0;margin-left:6px}.reward-card-actions{display:flex;align-items:center;gap:8px}.reward-card-actions .button{flex:1}.reward-card-actions .icon-button{border:1px solid var(--line);border-radius:11px}.balance-pill{display:inline-flex;align-items:center;gap:8px;border:1px solid #dce5d7;background:#eef3e9;color:var(--green);padding:10px 15px;font-size:12px;border-radius:11px;margin-bottom:24px}.toolbar{display:flex;gap:15px;align-items:center;justify-content:space-between;margin-bottom:20px;flex-wrap:wrap}.filters{display:flex;gap:5px;flex-wrap:wrap}.filter{background:transparent;color:var(--muted);border-radius:9px;font-size:12px;padding:9px 14px}.filter.active{background:#e7eddf;color:var(--green);font-weight:600}.search{position:relative;max-width:280px;flex:1;min-width:180px}.search svg{position:absolute;left:12px;top:11px;width:17px;height:17px;color:#9aa192}.search input{padding:10px 12px 10px 37px;min-height:39px;font-size:12px}.list-summary{display:flex;justify-content:space-between;align-items:center;margin-bottom:13px;font-size:11px;color:var(--muted)}.day-label{font-size:11px;color:#7c8977;margin:19px 2px 9px}.load-more{display:block;margin:18px auto;background:#e9eee4;color:var(--green);padding:12px 28px;border-radius:10px;font-size:12px}.notice{background:#eeeee3;border:1px solid #e3e4d5;color:#7b816b;border-radius:12px;padding:13px 16px;font-size:12px;line-height:1.9;margin-top:22px}.notice svg{width:15px;height:15px;vertical-align:-3px;margin-right:4px}.settings-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}.settings-panel{padding:25px}.settings-panel h2{font-size:15px;margin:0 0 20px}.settings-panel .field:last-child{margin-bottom:0}.settings-list .row{display:flex;align-items:center;gap:12px;padding:14px 0;border-top:1px solid var(--line)}.settings-list .row:first-child{border-top:0}.row-text{flex:1;min-width:0}.row-text strong{font-size:13px;font-weight:550;display:block;overflow-wrap:anywhere}.row-text small{font-size:11px;color:var(--muted);display:block;margin-top:5px}.row-value{font-size:14px;font-weight:600;color:var(--green)}.settings-list .icon-button{width:32px;height:32px}.settings-list svg{width:16px}.muted{color:var(--muted)}.help-text{font-size:11px;color:var(--muted);line-height:1.9}.field{display:block;margin-bottom:18px}.field>span,.field-label{display:block;font-size:12px;font-weight:600;margin-bottom:8px}.field small{display:block;font-size:11px;line-height:1.7;color:var(--muted);margin-top:7px}input,select,textarea{width:100%;padding:12px 13px;border:1px solid #dedfd6;background:#fffefa;border-radius:10px;outline:none;color:var(--ink);font-size:14px;min-height:44px}input:focus,select:focus,textarea:focus{border-color:#7a9976;box-shadow:0 0 0 3px #edf2e7}textarea{resize:vertical;min-height:85px}.two-col{display:grid;grid-template-columns:1fr 1fr;gap:14px}.segmented{display:flex;gap:5px;padding:4px;border-radius:12px;background:#f1f2eb;margin-bottom:22px}.segmented button{flex:1;padding:10px;border-radius:9px;background:transparent;color:var(--muted);font-size:13px}.segmented button.active{background:white;box-shadow:0 2px 8px #29382f08;color:var(--green);font-weight:600}.segmented button.active.deduct{color:#ba7658}.points-input{font-size:32px;font-weight:650;letter-spacing:-1px;padding:13px 16px}.dialog-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:22px}.dialog-head h2{font-size:20px;margin:0}.dialog-head .icon-button{width:32px;height:32px}.dialog-actions{display:flex;gap:10px;justify-content:flex-end;margin-top:23px}.dialog-actions .primary{min-width:115px}dialog{border:1px solid #e4e6da;box-shadow:0 24px 90px #20322626;border-radius:23px;padding:27px;width:min(460px,calc(100% - 32px));max-height:calc(100dvh - 40px);color:var(--ink);background:#fff;overflow:auto}dialog::backdrop{background:#263b3250;backdrop-filter:blur(4px)}.dialog-error{color:#b65d49;background:#fff2ec;border-radius:9px;padding:10px 12px;font-size:12px;line-height:1.7;margin-top:15px}.dialog-error:empty{display:none}.confirm-copy{font-size:14px;line-height:1.9;color:#6e7d6c;overflow-wrap:anywhere}.confirm-total{padding:19px;background:#f0f4eb;border-radius:13px;display:flex;justify-content:space-between;align-items:center;font-size:13px;margin:20px 0}.confirm-total strong{font-size:28px;color:var(--green)}.details-score{font-size:46px;font-weight:650;color:var(--green);text-align:center;margin:10px 0 22px}.details-score.negative{color:#cb8364}.details-list{margin:0}.details-list div{display:grid;grid-template-columns:74px 1fr;gap:10px;padding:13px 0;border-bottom:1px solid var(--line);font-size:12px;line-height:1.8}.details-list dt{color:var(--muted)}.details-list dd{margin:0;overflow-wrap:anywhere;white-space:pre-wrap}.record-tag{font-size:9px;border:1px solid #dce2d5;border-radius:4px;padding:1px 4px;display:inline-block;margin-left:6px;font-weight:400;vertical-align:1px;color:var(--muted)}#toast{position:fixed;left:50%;bottom:107px;transform:translate(-50%,12px);background:#293d31;color:white;padding:12px 22px;border-radius:12px;font-size:13px;z-index:100;pointer-events:none;opacity:0;transition:opacity .2s,transform .2s;max-width:90vw;line-height:1.7;text-align:center}#toast.visible{opacity:1;transform:translate(-50%,0)}#update-banner{position:fixed;top:10px;left:50%;transform:translateX(-50%);z-index:100;background:var(--ink);color:white;font-size:12px;padding:12px 16px;border-radius:12px;white-space:nowrap}#update-banner button{margin-left:12px;background:#f4dca8;color:#29382f;padding:7px 10px;border-radius:7px}.fatal{padding:32px;background:#fff3eb;border-radius:16px;margin-top:30px;line-height:1.9}
+@media(min-width:1100px){.topbar{height:112px}.page-heading{margin-top:40px}.score-card{min-height:269px}.score-actions{margin-top:26px}.rule-card{padding:19px 17px}.section{margin-top:32px}}
+@media(max-width:760px){.app-shell{padding:0 22px 112px}.topbar{height:86px}.brand{font-size:18px;gap:10px}.brand-mark{width:37px;height:37px;border-radius:12px;font-size:27px}.brand small{font-size:6px;letter-spacing:1.2px;margin-top:5px}.header-actions{gap:10px}.local-status{font-size:10px}.page-heading{margin:27px 0 21px}.page-heading h1{font-size:24px}.page-heading p{font-size:12px}.date-chip{font-size:10px;gap:5px}.date-chip svg{display:none}.dashboard-grid{grid-template-columns:1fr;gap:14px}.score-card{padding:24px 26px;min-height:248px}.score-value{font-size:73px}.stats-grid{grid-template-columns:repeat(3,1fr);gap:9px}.stat{padding:15px 12px;border-radius:13px}.stat:first-child{grid-column:auto;display:block}.stat:first-child .stat-number,.stat-number{font-size:24px;margin:12px 0 0}.stat-label{font-size:10px;gap:4px}.stat-label svg{width:13px;height:13px}.stat-number small{font-size:9px;margin-left:3px}.rule-grid{grid-template-columns:1fr 1fr;gap:10px}.rule-card{padding:14px 12px}.rule-card strong{font-size:12px}.rule-symbol{width:32px;height:32px;border-radius:10px}.lower-grid{grid-template-columns:1fr;gap:0}.section{margin-top:26px}.section-heading h2{font-size:15px}.goal-card{padding:20px}.rewards-grid{grid-template-columns:1fr 1fr;gap:12px}.reward-card{padding:18px}.reward-card h2{font-size:14px}.reward-card p{font-size:11px}.reward-card-actions .button{padding:10px 8px;font-size:11px}.reward-card-actions{gap:6px}.settings-grid{grid-template-columns:1fr;gap:16px}.settings-panel{padding:21px}.search{max-width:none;flex-basis:100%}.toolbar{gap:12px}.bottom-nav{bottom:calc(12px + env(safe-area-inset-bottom));gap:4px}.nav-item{min-width:96px;height:43px}.page-footer{margin-top:28px}dialog{padding:23px;border-radius:21px}.record-row{padding:15px 16px}.eyebrow{font-size:9px}.page-heading>.button{padding:10px 12px;font-size:12px;white-space:nowrap}.balance-pill{margin-bottom:20px}#toast{bottom:calc(92px + env(safe-area-inset-bottom))}}
+@media(max-width:370px){.app-shell{padding-left:15px;padding-right:15px}.local-status{display:none}.date-chip{display:none}.rewards-grid{grid-template-columns:1fr}.nav-item{min-width:88px}.rule-symbol{display:none}.stat{padding:14px 10px}.two-col{grid-template-columns:1fr;gap:0}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;scroll-behavior:auto!important}}
+
+  </style>
+  <title>小小积分本 · 记录每一份小进步</title>
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#home" aria-label="小小积分本首页"><span class="brand-mark" aria-hidden="true">✦</span><span>小小积分本<small>LITTLE MOMENTS, BIG GROWTH</small></span></a>
+      <div class="header-actions"><span class="local-status"><i></i> 本机保存</span><button class="icon-button" id="settings-button" aria-label="打开设置"></button></div>
+    </header>
+    <main id="main" tabindex="-1"></main>
+    <footer class="page-footer">每一次认真，都值得被看见 <span>✦</span></footer>
+  </div>
+  <nav class="bottom-nav" aria-label="主导航"></nav>
+  <dialog id="dialog" aria-labelledby="dialog-title"></dialog>
+  <div id="toast" role="status" aria-live="polite"></div>
+  <div id="update-banner" hidden>有新版本可以使用 <button id="update-button">更新网页</button></div>
+  <noscript>请启用 JavaScript 后使用积分本。数据仅保存在当前设备。</noscript>
+<script>
+/* Independent accounting model; no browser dependencies. */
+(function (root) {
+  'use strict';
+  const categories = ['学习成长', '生活习惯', '运动健康', '其他'];
+  const uid = () => globalThis.crypto?.randomUUID?.() || Date.now().toString(36) + Math.random().toString(36).slice(2);
+  const clone = value => JSON.parse(JSON.stringify(value));
+  function initial() {
+    return { schema: 1, nickname: '小朋友', rules: [
+      { id: uid(), title: '认真阅读', points: 5, category: '学习成长' },
+      { id: uid(), title: '主动整理房间', points: 3, category: '生活习惯' },
+      { id: uid(), title: '坚持运动', points: 5, category: '运动健康' },
+      { id: uid(), title: '按时完成作业', points: 5, category: '学习成长' }
+    ], rewards: [
+      { id: uid(), title: '选一份喜欢的小零食', cost: 30, note: '小小的快乐，自己来决定', icon: 'cookie' },
+      { id: uid(), title: '周末电影时光', cost: 80, note: '和家人一起看一部喜欢的电影', icon: 'film' },
+      { id: uid(), title: '一本心愿图书', cost: 150, note: '去书店，发现一个新的世界', icon: 'book' }
+    ], entries: [] };
+  }
+  function assert(ok, message) { if (!ok) throw new Error(message); }
+  function string(value, max, label, required = true) {
+    assert(typeof value === 'string' && value.length <= max && (!required || value.trim().length > 0), label + '不正确');
+  }
+  function integer(value, label = '分数') { assert(Number.isSafeInteger(value) && value > 0 && value <= 100000, label + '须为 1～100000 的整数'); }
+  function balance(state) { return state.entries.reduce((sum, e) => sum + e.delta, 0); }
+  function reversedIds(state) { return new Set(state.entries.filter(e => e.type === 'reversal').map(e => e.ref)); }
+  function active(state) { const ids = reversedIds(state); return state.entries.filter(e => e.type !== 'reversal' && !ids.has(e.id)); }
+  function stats(state) {
+    const list = active(state);
+    return { balance: balance(state), earned: list.filter(e => e.type === 'earn').reduce((s,e) => s + e.delta, 0), deducted: list.filter(e => e.type === 'deduct').reduce((s,e) => s - e.delta, 0), redeemed: list.filter(e => e.type === 'redeem').reduce((s,e) => s - e.delta, 0) };
+  }
+  function validate(state) {
+    assert(state && state.schema === 1, '无法识别本机数据，请不要清理浏览器数据');
+    string(state.nickname, 20, '昵称');
+    for (const key of ['rules', 'rewards', 'entries']) assert(Array.isArray(state[key]), '本机数据格式异常');
+    const ids = new Set();
+    for (const item of [...state.rules, ...state.rewards, ...state.entries]) {
+      string(item.id, 100, '记录编号'); assert(!ids.has(item.id), '记录编号重复'); ids.add(item.id);
+    }
+    state.rules.forEach(r => { string(r.title, 40, '规则名称'); integer(Math.abs(r.points)); assert(categories.includes(r.category), '规则分类异常'); });
+    state.rewards.forEach(r => { string(r.title, 40, '奖励名称'); integer(r.cost); string(r.note, 120, '奖励说明', false); });
+    const reversed = new Set();
+    state.entries.forEach(e => {
+      assert(['earn','deduct','redeem','reversal'].includes(e.type), '记录类型异常');
+      integer(Math.abs(e.delta)); assert((e.type !== 'earn' || e.delta > 0) && (!['deduct','redeem'].includes(e.type) || e.delta < 0), '记录分数异常');
+      string(e.reason, 80, '记分原因'); string(e.note, 300, '备注', false);
+      assert(Number.isFinite(Date.parse(e.at)) && Number.isFinite(Date.parse(e.createdAt)), '记录时间异常');
+      if (e.type === 'reversal') {
+        const original = state.entries.find(x => x.id === e.ref && x.type !== 'reversal');
+        assert(original && original.delta === -e.delta && !reversed.has(e.ref), '撤销记录异常'); reversed.add(e.ref);
+      }
+    });
+    assert(Math.abs(balance(state)) <= 1000000000, '可用积分超出允许范围');
+    return state;
+  }
+  function add(state, input) {
+    const next = clone(state);
+    assert(['earn','deduct','redeem'].includes(input.type), '请选择有效的记分类型');
+    integer(input.points); string(input.reason, 80, '记分原因'); string(input.note || '', 300, '备注', false);
+    const date = new Date(input.at || Date.now());
+    assert(Number.isFinite(date.getTime()) && date.getTime() <= Date.now() + 60000, '发生时间不能晚于现在');
+    const delta = input.type === 'earn' ? input.points : -input.points;
+    if (input.type === 'redeem') assert(balance(next) + delta >= 0, '当前积分不足，暂时不能兑换');
+    next.entries.push({ id: uid(), type: input.type, delta, reason: input.reason.trim(), category: input.type === 'redeem' ? '奖励兑换' : (categories.includes(input.category) ? input.category : '其他'), note: (input.note || '').trim(), at: date.toISOString(), createdAt: new Date().toISOString() });
+    return validate(next);
+  }
+  function undo(state, id) {
+    const entry = state.entries.find(e => e.id === id);
+    assert(entry && entry.type !== 'reversal' && !reversedIds(state).has(id), '这条记录已经撤销或不存在');
+    const next = clone(state), now = new Date().toISOString();
+    next.entries.push({ id: uid(), type: 'reversal', delta: -entry.delta, reason: '撤销：' + entry.reason, category: entry.category, note: '', at: now, createdAt: now, ref: id });
+    // The original reason can occupy 80 characters; allow its reversal prefix separately.
+    next.entries[next.entries.length - 1].reason = next.entries[next.entries.length - 1].reason.slice(0,80);
+    return validate(next);
+  }
+  const api = { categories, uid, clone, initial, validate, balance, stats, active, reversedIds, add, undo };
+  root.ScoreCore = api;
+  if (typeof module !== 'undefined') module.exports = api;
+})(globalThis);
+
+</script>
+<script>
+/* All records stay on this device. No analytics or remote requests. */
+(() => {
+  'use strict';
+  const C = window.ScoreCore, KEY = 'little-scorebook.v1';
+  const singleFile = document.querySelector('meta[name="scorebook-mode"]')?.content === 'single';
+  const $ = selector => document.querySelector(selector);
+  const escape = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const paths = {
+    home:'<path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1Z"/>',
+    gift:'<rect x="3" y="8" width="18" height="4" rx="1"/><path d="M5 12v9h14v-9M12 8v13"/><path d="M12 8H8a3 3 0 1 1 3-3Zm0 0h4a3 3 0 1 0-3-3Z"/>',
+    list:'<rect x="5" y="3" width="15" height="18" rx="2"/><path d="M9 8h7M9 12h7M9 16h4M3 7h4M3 12h4M3 17h4"/>',
+    settings:'<path d="m10 3-1 3-3 1-3 3 2 2-1 4 3 3 3-1 3 3 3-1 1-3 3-1v-4l-3-1-1-3-4-1Z"/><circle cx="12" cy="12" r="3"/>',
+    plus:'<path d="M12 5v14M5 12h14"/>', minus:'<path d="M5 12h14"/>',
+    arrow:'<path d="m9 5 7 7-7 7"/>',close:'<path d="m6 6 12 12M18 6 6 18"/>',
+    calendar:'<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M7 3v4M17 3v4M3 11h18"/>',
+    star:'<path d="m12 3 2.8 5.7 6.2.9-4.5 4.4 1.1 6.2-5.6-3-5.6 3 1.1-6.2L3 9.6l6.2-.9Z"/>',
+    up:'<path d="m5 16 6-6 4 4 6-9M15 5h6v6"/>',
+    book:'<path d="M12 5C8 2 4 3 2 4v15c4-2 7-1 10 1 3-2 6-3 10-1V4c-2-1-6-2-10 1Zm0 0v15"/>',
+    leaf:'<path d="M20 3C7 2 2 9 5 16s16 5 15-13ZM5 20 16 9"/>',
+    sun:'<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.5 1.5M17.5 17.5 19 19M5 19l1.5-1.5M17.5 6.5 19 5"/>',
+    check:'<path d="m5 12 4 4L19 6"/>',
+    edit:'<path d="m14 5 5 5M4 20l5-1L20 8a3 3 0 0 0-5-5L4 14Z"/>',
+    undo:'<path d="M4 10h10a6 6 0 0 1 0 12M8 5l-5 5 5 5"/>',
+    search:'<circle cx="10" cy="10" r="6"/><path d="m15 15 5 5"/>',
+    info:'<circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7h.01"/>',
+    film:'<rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 4v16M17 4v16M3 9h4M3 15h4M17 9h4M17 15h4"/>',
+    cookie:'<path d="M21 12a9 9 0 1 1-9-9 4 4 0 0 0 5 5 4 4 0 0 0 4 4Z"/><path d="M8 8h.01M7 14h.01M12 17h.01M14 12h.01"/>',
+    trash:'<path d="M3 6h18M9 6V3h6v3M5 6l1 15h12l1-15M10 10v7M14 10v7"/>'
+  };
+  const icon = name => `<svg viewBox="0 0 24 24" aria-hidden="true">${paths[name] || paths.star}</svg>`;
+  const number = n => n.toLocaleString('zh-CN');
+  const signed = n => (n > 0 ? '+' : '') + number(n);
+  const types = { earn:'加分', deduct:'扣分', redeem:'兑换', reversal:'撤销' };
+  const categoryIcon = category => ({'学习成长':'book','生活习惯':'leaf','运动健康':'sun'}[category] || 'star');
+  const fmt = (date, options) => new Date(date).toLocaleString('zh-CN', options || {month:'numeric',day:'numeric',hour:'2-digit',minute:'2-digit',hour12:false});
+  const localDateTime = (date = new Date()) => {
+    const pad = n => String(n).padStart(2,'0');
+    return `${date.getFullYear()}-${pad(date.getMonth()+1)}-${pad(date.getDate())}T${pad(date.getHours())}:${pad(date.getMinutes())}`;
+  };
+  let state, fatal = false, filter = 'all', search = '', visible = 40, toastTimer, dialogReturnFocus;
+  try {
+    const raw = localStorage.getItem(KEY);
+    state = raw ? C.validate(JSON.parse(raw)) : C.initial();
+    if (!raw) localStorage.setItem(KEY, JSON.stringify(state));
+  } catch (error) {
+    fatal = true;
+    $('#main').innerHTML = `<div class="fatal"><h1>暂时无法读取积分本</h1><p>请允许当前浏览器保存网站数据，然后重新打开。已有数据异常时，请保留当前浏览器数据，不要清理。</p><p>${escape(error.message)}</p><button class="button secondary" onclick="location.reload()">重新尝试</button></div>`;
+  }
+  $('#settings-button').innerHTML = icon('settings');
+  function readLatest() {
+    const raw = localStorage.getItem(KEY);
+    if (!raw) throw new Error('本机数据已被清理，请刷新网页后重新开始');
+    return C.validate(JSON.parse(raw));
+  }
+  function commit(updater) {
+    const next = C.validate(updater(readLatest()));
+    try { localStorage.setItem(KEY, JSON.stringify(next)); }
+    catch { throw new Error('保存失败，设备存储可能已满。这次操作尚未记入。'); }
+    state = next;
+    render();
+  }
+  function toast(message) {
+    $('#toast').textContent = message; $('#toast').classList.add('visible');
+    clearTimeout(toastTimer); toastTimer = setTimeout(() => $('#toast').classList.remove('visible'), 3300);
+  }
+  function page() { const name = location.hash.slice(1); return ['home','rewards','history','settings'].includes(name) ? name : 'home'; }
+  function heading(kicker, title, sub, action = '') { return `<div class="page-heading"><div><p class="eyebrow">${kicker}</p><h1>${title}</h1><p>${sub}</p></div>${action}</div>`; }
+  function sectionHeading(title, symbol, action) { return `<div class="section-heading"><h2>${icon(symbol)}${title}</h2>${action || ''}</div>`; }
+  function empty(title, description, action = '') { return `<div class="empty-state"><div class="empty-icon">${icon('leaf')}</div><strong>${title}</strong>${description}${action}</div>`; }
+  function row(entry) {
+    const reversed = C.reversedIds(state).has(entry.id), symbol = entry.type === 'earn' ? 'plus' : entry.type === 'deduct' ? 'minus' : entry.type === 'redeem' ? 'gift' : 'undo';
+    return `<button class="record-row ${reversed ? 'is-reversed' : ''}" data-action="details" data-id="${escape(entry.id)}"><span class="record-symbol ${entry.type}">${icon(symbol)}</span><span class="record-body"><span class="record-title">${escape(entry.reason)}${reversed ? '<span class="record-tag">已撤销</span>' : ''}</span><span class="record-meta">${escape(entry.category)} · ${fmt(entry.at)}</span></span><span class="record-points ${entry.delta < 0 ? 'negative' : ''} ${entry.type === 'reversal' ? 'muted' : ''}">${signed(entry.delta)}</span></button>`;
+  }
+  function sortedEntries() { return [...state.entries].sort((a,b) => Date.parse(b.at) - Date.parse(a.at) || Date.parse(b.createdAt) - Date.parse(a.createdAt)); }
+  function home() {
+    const s = C.stats(state), recent = sortedEntries().slice(0,4);
+    const goal = [...state.rewards].sort((a,b) => a.cost-b.cost).find(r => r.cost > s.balance) || [...state.rewards].sort((a,b) => a.cost-b.cost)[0];
+    return heading('A LITTLE BETTER, EVERY DAY', `${escape(state.nickname)}的成长小账本`, '把每一份小进步，变成看得见的鼓励。', `<div class="date-chip">${icon('calendar')}${new Date().toLocaleDateString('zh-CN',{month:'long',day:'numeric',weekday:'long'})}</div>`) +
+    `<div class="dashboard-grid"><section class="score-card" aria-label="当前积分"><div class="score-decoration" aria-hidden="true">✦</div><div class="score-label">${icon('star')}当前可用积分</div><div class="score-value">${number(s.balance)}<small>积分</small></div><p class="score-description">${s.balance < 0 ? '慢慢来，每一次努力都能积累新的进步。' : '一点点积累，离小心愿更近一点。'}</p><div class="score-actions"><button class="button warm" data-action="score" data-type="earn">${icon('plus')}记一笔加分</button><button class="button ghost-light" data-action="score" data-type="deduct">${icon('minus')}扣分</button></div></section><section class="stats-grid" aria-label="积分统计"><div class="stat"><div class="stat-label">${icon('up')}累计获得</div><div class="stat-number">${number(s.earned)}<small>分</small></div></div><div class="stat"><div class="stat-label">${icon('minus')}累计扣分</div><div class="stat-number">${number(s.deducted)}<small>分</small></div></div><div class="stat"><div class="stat-label">${icon('gift')}累计兑换</div><div class="stat-number">${number(s.redeemed)}<small>分</small></div></div></section></div>
+    <section class="section">${sectionHeading('给小进步一点奖励','sun',`<a class="text-button" href="#settings">管理规则${icon('arrow')}</a>`)}${state.rules.length ? `<div class="rule-grid">${state.rules.slice(0,8).map(r => `<button class="rule-card" data-action="rule-score" data-id="${escape(r.id)}"><span class="rule-symbol">${icon(categoryIcon(r.category))}</span><span><strong>${escape(r.title)}</strong><small>${signed(r.points)} 积分</small></span></button>`).join('')}</div>` : `<div class="panel">${empty('还没有常用规则','把日常的小约定，添加为一键记分规则。','<a href="#settings" class="button secondary">去添加规则</a>')}</div>`}</section>
+    <div class="lower-grid"><section class="section">${sectionHeading('最近的小脚印','list',`<a class="text-button" href="#history">全部明细${icon('arrow')}</a>`)}<div class="panel">${recent.length ? recent.map(row).join('') : empty('第一份进步，从今天开始','点击“记一笔加分”，记录值得鼓励的瞬间。')}</div></section><section class="section">${sectionHeading('下一个小心愿','gift',`<a class="text-button" href="#rewards">奖励小铺${icon('arrow')}</a>`)}${goal ? `<div class="panel goal-card"><div class="goal-top"><span class="reward-symbol">${icon(goal.icon)}</span><div><h3>${escape(goal.title)}</h3><p>${number(goal.cost)} 积分兑换</p></div></div><div class="progress-meta"><strong>${s.balance >= goal.cost ? '已经可以兑换啦' : `还差 ${number(goal.cost - s.balance)} 积分`}</strong><span>${Math.max(0,Math.min(100,Math.floor(s.balance / goal.cost * 100)))}%</span></div><div class="progress"><span style="width:${Math.max(0,Math.min(100,s.balance / goal.cost * 100))}%"></span></div><p class="goal-note">${escape(goal.note || '每天积累一点点，小心愿会慢慢实现。')}</p></div>` : `<div class="panel">${empty('给努力一个小期待','去奖励小铺，添加第一个小心愿。')}</div>`}</section></div>`;
+  }
+  function rewards() {
+    const balance = C.balance(state);
+    return heading('SOMETHING TO LOOK FORWARD TO','奖励小铺','让努力有回响，让期待慢慢实现。',`<button class="button primary" data-action="reward-edit">${icon('plus')}添加奖励</button>`) +
+    `<div class="balance-pill">${icon('star')}当前可用 <strong>${number(balance)}</strong> 积分</div><div class="rewards-grid">${state.rewards.map(r => `<article class="reward-card"><div class="reward-symbol">${icon(r.icon)}</div><h2>${escape(r.title)}</h2><p>${escape(r.note || '为认真努力的自己，兑换一份小快乐。')}</p><div class="reward-cost">${number(r.cost)}<small>积分</small></div><div class="reward-card-actions"><button class="button ${balance >= r.cost ? 'primary' : 'secondary'}" data-action="redeem" data-id="${escape(r.id)}" ${balance < r.cost ? 'disabled' : ''}>${balance >= r.cost ? '兑换奖励' : `还差 ${number(r.cost - balance)} 分`}</button><button class="icon-button" aria-label="编辑${escape(r.title)}" data-action="reward-edit" data-id="${escape(r.id)}">${icon('edit')}</button></div></article>`).join('')}</div>${!state.rewards.length ? `<div class="panel">${empty('小心愿，等你来添加','一次家庭出游、一本书，或一起做喜欢的事。')}</div>` : ''}<div class="notice">${icon('info')}兑换会扣除相应积分，并记入明细。兑换后请由家长兑现奖励；记错时可在明细中撤销。</div>`;
+  }
+  function filtered() {
+    return sortedEntries().filter(e => (filter === 'all' || e.type === filter) && (!search || (e.reason + ' ' + e.note + ' ' + e.category).toLowerCase().includes(search.toLowerCase())));
+  }
+  function historyResults() {
+    const entries = filtered(), shown = entries.slice(0,visible); let day = '';
+    return `<div class="list-summary"><span>共 ${entries.length} 条记录${filter !== 'all' || search ? ' · 已筛选' : ''}</span><span>当前积分 <strong>${number(C.balance(state))}</strong></span></div>${shown.length ? shown.map(e => {
+      const label = fmt(e.at,{year:'numeric',month:'long',day:'numeric',weekday:'short'});
+      let prefix = ''; if (day !== label) { prefix = (day ? '</div>' : '') + `<div class="day-label">${label}</div><div class="panel">`; day = label; }
+      return prefix + row(e);
+    }).join('') + '</div>' : `<div class="panel">${empty(search || filter !== 'all' ? '没有找到匹配的记录' : '还没有积分记录',search || filter !== 'all' ? '试试其他关键词或筛选条件。' : '认真生活的每个瞬间，都可以从这里开始记录。')}</div>`}${entries.length > visible ? '<button class="load-more" data-action="load-more">查看更多记录</button>' : ''}`;
+  }
+  function history() {
+    return heading('EVERY LITTLE STEP COUNTS','积分明细','每一笔加减，都有迹可循。',`<button class="button primary" data-action="score" data-type="earn">${icon('plus')}记一笔</button>`) +
+    `<div class="toolbar"><div class="filters" role="group" aria-label="按类型筛选">${[['all','全部'],['earn','加分'],['deduct','扣分'],['redeem','兑换'],['reversal','撤销']].map(([id,title]) => `<button class="filter ${filter === id ? 'active' : ''}" data-action="filter" data-filter="${id}" aria-pressed="${filter === id}">${title}</button>`).join('')}</div><label class="search">${icon('search')}<input id="history-search" type="search" aria-label="搜索原因或备注" placeholder="搜索原因、备注…" maxlength="100" value="${escape(search)}"></label></div><div id="history-results">${historyResults()}</div>`;
+  }
+  function settings() {
+    return heading('MAKE IT YOUR OWN','设置','简单一点，把注意力留给成长。') + `<div class="settings-grid"><section class="panel settings-panel"><h2>这个积分本属于</h2><form id="nickname-form"><label class="field"><span>孩子的昵称</span><input name="nickname" value="${escape(state.nickname)}" maxlength="20" required autocomplete="off"><small>默认“小朋友”，最多 20 个字。</small></label><button class="button primary" type="submit">保存昵称</button><p class="help-text">一个孩子，一本小账。不需要头像，也不需要创建档案。</p></form></section><section class="panel settings-panel"><h2>关于积分本</h2><p class="help-text">支持整数积分，余额可以为负数。奖励需要积分足够才能兑换。已撤销的记录不计入累计统计。</p><p class="help-text">所有数据仅保存在当前设备的浏览器中，没有账号，也不会自动同步。清理网站数据、删除网页应用或换设备可能导致记录丢失。</p><p class="help-text">本版本不提供备份、导入或导出。离线可用状态见下方说明。</p><p class="help-text" id="offline-status">${offlineStatus()}</p></section><section class="panel settings-panel" style="grid-column:1/-1">${sectionHeading('常用计分规则','sun',`<button class="text-button" data-action="rule-edit">${icon('plus')}添加规则</button>`)}<div class="settings-list">${state.rules.map(r => `<div class="row"><span class="rule-symbol">${icon(categoryIcon(r.category))}</span><div class="row-text"><strong>${escape(r.title)}</strong><small>${escape(r.category)}</small></div><span class="row-value">${signed(r.points)}</span><button class="icon-button" aria-label="编辑${escape(r.title)}" data-action="rule-edit" data-id="${escape(r.id)}">${icon('edit')}</button></div>`).join('') || '<p class="help-text">还没有规则，点击右上角添加。</p>'}</div><p class="help-text">点击首页规则会带入分数和原因，确认后才会记账。修改或删除规则不会改变历史记录。</p></section></div>`;
+  }
+  function render() {
+    if (fatal) return;
+    const current = page();
+    $('#main').innerHTML = ({ home, rewards, history, settings })[current]();
+    $('.bottom-nav').innerHTML = [['home','首页','home'],['rewards','奖励','gift'],['history','明细','list']].map(([id,title,symbol]) => `<a class="nav-item ${current === id ? 'active' : ''}" href="#${id}" ${current === id ? 'aria-current="page"' : ''}>${icon(symbol)}${title}</a>`).join('');
+    document.title = `${{home:'小小积分本', rewards:'奖励小铺',history:'积分明细',settings:'设置'}[current]} · ${state.nickname}`;
+  }
+  function modal(title, body) {
+    dialogReturnFocus = document.activeElement;
+    const dialog = $('#dialog');
+    dialog.innerHTML = `<div class="dialog-head"><h2 id="dialog-title">${title}</h2><button type="button" class="icon-button" data-action="close" aria-label="关闭">${icon('close')}</button></div>${body}`;
+    if (!dialog.open) dialog.showModal();
+    requestAnimationFrame(() => (dialog.querySelector('[autofocus]') || dialog.querySelector('input,button')).focus());
+  }
+  function close() { $('#dialog').close(); dialogReturnFocus?.isConnected && dialogReturnFocus.focus(); }
+  function error(message) { const el = $('#dialog-error'); if (el) { el.textContent = message; el.setAttribute('role','alert'); } else toast(message); }
+  const formEnd = (label = '确认保存') => `<p class="dialog-error" id="dialog-error"></p><div class="dialog-actions"><button class="button plain" type="button" data-action="close">取消</button><button class="button primary" type="submit">${label}</button></div></form>`;
+  let scoreType = 'earn';
+  function scoreModal(type = 'earn', rule) {
+    scoreType = type;
+    modal('记录一个成长瞬间', `<form id="score-form"><div class="segmented" role="group" aria-label="记分类型"><button type="button" class="${type === 'earn' ? 'active' : ''}" data-action="score-type" data-type="earn" aria-pressed="${type === 'earn'}">${icon('plus')} 加分</button><button type="button" class="deduct ${type === 'deduct' ? 'active' : ''}" data-action="score-type" data-type="deduct" aria-pressed="${type === 'deduct'}">${icon('minus')} 扣分</button></div><label class="field"><span>分数</span><input class="points-input" name="points" type="number" inputmode="numeric" min="1" max="100000" step="1" placeholder="0" value="${rule ? Math.abs(rule.points) : ''}" required autofocus></label><label class="field"><span>记分原因</span><input name="reason" placeholder="例如：今天主动阅读了半小时" maxlength="80" value="${escape(rule?.title || '')}" required></label><div class="two-col"><label class="field"><span>分类</span><select name="category">${C.categories.map(cat => `<option ${cat === rule?.category ? 'selected' : ''}>${cat}</option>`).join('')}</select></label><label class="field"><span>发生时间</span><input name="at" type="datetime-local" value="${localDateTime()}" required></label></div><label class="field"><span>备注 <span class="muted">（选填）</span></span><textarea name="note" maxlength="300" placeholder="记下更多细节，也可以留一句鼓励的话。"></textarea></label><p class="help-text">当前积分 ${number(C.balance(state))} · 扣分后允许为负数</p>${formEnd('确认记分')}`);
+  }
+  function ruleModal(id) {
+    const r = state.rules.find(x => x.id === id);
+    modal(r ? '编辑计分规则' : '添加计分规则', `<form id="rule-form" data-id="${escape(r?.id || '')}"><label class="field"><span>规则名称</span><input name="title" maxlength="40" placeholder="例如：主动帮忙做家务" value="${escape(r?.title || '')}" required autofocus></label><div class="two-col"><label class="field"><span>类型</span><select name="type"><option value="earn">加分</option><option value="deduct" ${r?.points < 0 ? 'selected' : ''}>扣分</option></select></label><label class="field"><span>分数</span><input name="points" type="number" inputmode="numeric" min="1" max="100000" step="1" value="${r ? Math.abs(r.points) : 5}" required></label></div><label class="field"><span>分类</span><select name="category">${C.categories.map(c => `<option ${c === r?.category ? 'selected' : ''}>${c}</option>`).join('')}</select></label>${r ? `<button type="button" class="text-button" data-action="rule-delete" data-id="${escape(r.id)}">${icon('trash')}删除这条规则</button>` : ''}${formEnd()}`);
+  }
+  function rewardModal(id) {
+    const r = state.rewards.find(x => x.id === id);
+    modal(r ? '编辑奖励' : '添加一个小心愿', `<form id="reward-form" data-id="${escape(r?.id || '')}"><label class="field"><span>奖励名称</span><input name="title" maxlength="40" placeholder="例如：一次周末野餐" value="${escape(r?.title || '')}" required autofocus></label><div class="two-col"><label class="field"><span>所需积分</span><input name="cost" type="number" inputmode="numeric" min="1" max="100000" step="1" value="${r?.cost || 30}" required></label><label class="field"><span>小图标</span><select name="icon">${[['gift','礼物'],['cookie','零食'],['film','电影'],['book','图书'],['sun','活动'],['star','心愿']].map(([val,label]) => `<option value="${val}" ${r?.icon === val ? 'selected' : ''}>${label}</option>`).join('')}</select></label></div><label class="field"><span>奖励说明 <span class="muted">（选填）</span></span><textarea name="note" maxlength="120" placeholder="写下这份小期待…">${escape(r?.note || '')}</textarea></label>${r ? `<button type="button" class="text-button" data-action="reward-delete" data-id="${escape(r.id)}">${icon('trash')}删除这个奖励</button>` : ''}${formEnd()}`);
+  }
+  function confirmModal(title, copy, action, id, label = '确认', extra = '') {
+    modal(title, `<p class="confirm-copy">${copy}</p>${extra}<p class="dialog-error" id="dialog-error"></p><div class="dialog-actions"><button class="button plain" data-action="close">取消</button><button class="button primary" data-action="${action}" data-id="${escape(id)}">${label}</button></div>`);
+  }
+  function details(id) {
+    const e = state.entries.find(x => x.id === id); if (!e) return;
+    const reversal = state.entries.find(x => x.type === 'reversal' && x.ref === id);
+    modal('积分记录', `<div class="details-score ${e.delta < 0 ? 'negative' : ''}">${signed(e.delta)}<small style="font-size:13px;margin-left:8px">积分</small></div><dl class="details-list"><div><dt>记分原因</dt><dd>${escape(e.reason)}</dd></div><div><dt>记录类型</dt><dd>${types[e.type]}${reversal ? ' · 已撤销' : ''}</dd></div><div><dt>分类</dt><dd>${escape(e.category)}</dd></div><div><dt>发生时间</dt><dd>${fmt(e.at,{year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',hour12:false})}</dd></div><div><dt>录入时间</dt><dd>${fmt(e.createdAt,{year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',hour12:false})}</dd></div><div><dt>备注</dt><dd>${escape(e.note || '—')}</dd></div>${reversal ? `<div><dt>撤销时间</dt><dd>${fmt(reversal.at)}</dd></div>` : ''}</dl>${e.type !== 'reversal' && !reversal ? `<p class="help-text">如记错，可撤销整笔记录。原记录会保留，积分会自动返还或扣回。</p><button class="button danger full" data-action="undo" data-id="${escape(id)}">${icon('undo')}撤销这笔记录</button>` : '<p class="help-text">此记录保留用于核对，不支持重复撤销。</p>'}`);
+  }
+  const actions = {
+    close,
+    score: el => scoreModal(el.dataset.type),
+    'rule-score': el => { const r = state.rules.find(x => x.id === el.dataset.id); if (r) scoreModal(r.points > 0 ? 'earn' : 'deduct',r); },
+    'score-type': el => { scoreType = el.dataset.type; $('#score-form').querySelectorAll('[data-action="score-type"]').forEach(b => { b.classList.toggle('active', b.dataset.type === scoreType); b.setAttribute('aria-pressed',String(b.dataset.type === scoreType)); }); },
+    'rule-edit': el => ruleModal(el.dataset.id), 'reward-edit': el => rewardModal(el.dataset.id),
+    'rule-delete': el => confirmModal('删除计分规则','删除后，首页将不再显示这条规则，历史记录仍会保留。','rule-delete-confirm',el.dataset.id,'删除规则'),
+    'reward-delete': el => confirmModal('删除奖励','删除后，奖励小铺将不再显示这个奖励，过去的兑换记录仍会保留。','reward-delete-confirm',el.dataset.id,'删除奖励'),
+    'rule-delete-confirm': el => { commit(s => { s.rules = s.rules.filter(x => x.id !== el.dataset.id); return s; }); close(); toast('规则已删除'); },
+    'reward-delete-confirm': el => { commit(s => { s.rewards = s.rewards.filter(x => x.id !== el.dataset.id); return s; }); close(); toast('奖励已删除'); },
+    redeem: el => { const r = state.rewards.find(x => x.id === el.dataset.id); if (!r) return; confirmModal('兑换一份小快乐', `确定用 <strong>${number(r.cost)} 积分</strong>兑换「${escape(r.title)}」吗？`, 'redeem-confirm', r.id, '确认兑换', `<div class="confirm-total"><span>兑换后剩余积分</span><strong>${number(C.balance(state)-r.cost)}</strong></div>`); },
+    'redeem-confirm': el => {
+      commit(s => { const r = s.rewards.find(x => x.id === el.dataset.id); if (!r) throw new Error('这个奖励已删除，请重新选择'); return C.add(s, {type:'redeem',points:r.cost,reason:r.title,note:r.note}); }); close(); toast('兑换成功，记得兑现小心愿哦');
+    },
+    details: el => details(el.dataset.id),
+    undo: el => { const e = state.entries.find(x => x.id === el.dataset.id); if (e) confirmModal('撤销这笔记录', `确认撤销「${escape(e.reason)}」？积分将${e.delta > 0 ? '扣回' : '返还'} ${number(Math.abs(e.delta))} 分，原记录会保留。`, 'undo-confirm',e.id,'确认撤销'); },
+    'undo-confirm': el => { commit(s => C.undo(s,el.dataset.id)); close(); toast('已撤销，积分已更新'); },
+    filter: el => { filter = el.dataset.filter; visible = 40; render(); },
+    'load-more': () => { visible += 40; $('#history-results').innerHTML = historyResults(); }
+  };
+  document.addEventListener('click', event => {
+    const el = event.target.closest('[data-action]'); if (!el || el.disabled || fatal) return;
+    try { actions[el.dataset.action]?.(el); } catch (e) { error(e.message); }
+  });
+  document.addEventListener('submit', event => {
+    const form = event.target; if (!['score-form','rule-form','reward-form','nickname-form'].includes(form.id)) return;
+    event.preventDefault(); const data = Object.fromEntries(new FormData(form));
+    try {
+      if (form.id === 'score-form') {
+        commit(s => C.add(s, {type:scoreType,points:Number(data.points),reason:data.reason,category:data.category,note:data.note,at:new Date(data.at).toISOString()}));
+        close(); toast(scoreType === 'earn' ? '加分已记录，每一份努力都值得鼓励' : '扣分已记录，下一次继续加油');
+      } else if (form.id === 'nickname-form') {
+        commit(s => { s.nickname = data.nickname.trim(); return s; }); toast('昵称已保存');
+      } else {
+        const isRule = form.id === 'rule-form';
+        commit(s => {
+          const key = isRule ? 'rules' : 'rewards', list = s[key];
+          const id = form.dataset.id || C.uid();
+          if (form.dataset.id && !list.some(x => x.id === id)) throw new Error('这条配置已删除，请重新打开');
+          const item = isRule ? {id,title:data.title.trim(),points:Number(data.points) * (data.type === 'deduct' ? -1 : 1),category:data.category} : {id,title:data.title.trim(),cost:Number(data.cost),note:data.note.trim(),icon:data.icon};
+          const index = list.findIndex(x => x.id === id); if (index >= 0) list[index] = item; else list.push(item);
+          return s;
+        }); close(); toast(isRule ? '计分规则已保存' : '奖励已保存');
+      }
+    } catch (e) { error(e.message); }
+  });
+  document.addEventListener('input', event => {
+    if (event.target.id === 'history-search') { search = event.target.value; visible = 40; $('#history-results').innerHTML = historyResults(); }
+  });
+  $('#settings-button').addEventListener('click', () => { location.hash = 'settings'; });
+  $('#dialog').addEventListener('click', event => { if (event.target === $('#dialog')) { const rect = $('#dialog').getBoundingClientRect(); if (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom) close(); } });
+  window.addEventListener('hashchange', () => { if ($('#dialog').open) close(); render(); window.scrollTo({top:0,behavior:'instant'}); });
+  window.addEventListener('storage', event => {
+    if (event.key !== KEY) return;
+    try { state = readLatest(); render(); toast('积分本已与本机其他页面同步'); }
+    catch { fatal = true; if ($('#dialog').open) close(); $('#main').innerHTML = '<div class="fatal"><h1>本机数据发生变化</h1><p>请刷新网页后继续使用。</p><button class="button secondary" onclick="location.reload()">刷新网页</button></div>'; }
+  });
+  function offlineStatus() {
+    if (singleFile) return location.protocol === 'file:'
+      ? '当前为单 HTML 文件版，页面资源全部内嵌，可在本机直接打开使用。请固定使用同一文件位置和浏览器。'
+      : '当前为单 HTML 文件版。部署只需这一个文件；打开页面需要联网，积分保存在本机。添加到主屏幕后仍需联网打开，不保证离线重开。';
+    if (location.protocol === 'file:') return '当前为本地文件模式，可在本机浏览器中使用。iPhone 主屏幕安装需要通过 HTTPS 地址访问。';
+    if (!window.isSecureContext || !('serviceWorker' in navigator)) return '当前环境不支持离线安装。iPhone 主屏幕安装需要使用 Safari 访问 HTTPS 地址。';
+    return navigator.serviceWorker.controller ? '离线功能已就绪。iPhone 可在 Safari 中使用“分享 → 添加到主屏幕”。' : '正在准备离线资源，首次使用请保持联网片刻。';
+  }
+  if (!fatal) render();
+  if (!singleFile && !fatal && 'serviceWorker' in navigator && window.isSecureContext && /^https?:$/.test(location.protocol)) {
+    let waitingWorker;
+    navigator.serviceWorker.register('./sw.js').then(reg => {
+      const showUpdate = () => { if (reg.waiting && navigator.serviceWorker.controller) { waitingWorker = reg.waiting; $('#update-banner').hidden = false; } };
+      showUpdate();
+      reg.addEventListener('updatefound', () => { const worker = reg.installing; worker?.addEventListener('statechange', () => { if (worker.state === 'installed') showUpdate(); }); });
+      navigator.serviceWorker.ready.then(() => { const status = $('#offline-status'); if (status) status.textContent = '离线资源已准备好。iPhone 可在 Safari 中使用“分享 → 添加到主屏幕”。'; });
+    }).catch(() => { const status = $('#offline-status'); if (status) status.textContent = '离线资源暂未准备成功，请在联网后重新打开网页。当前仍可正常记分。'; });
+    let reloadForUpdate = false;
+    $('#update-button').addEventListener('click', () => { if ($('#dialog').open) { toast('请先保存或关闭正在编辑的内容，再更新'); return; } reloadForUpdate = true; waitingWorker?.postMessage({type:'SKIP_WAITING'}); });
+    navigator.serviceWorker.addEventListener('controllerchange', () => { if (reloadForUpdate) location.reload(); else { const status = $('#offline-status'); if (status) status.textContent = offlineStatus(); } });
+  }
+})();
+
+</script>
+</body>
+</html>
